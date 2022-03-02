@@ -56,7 +56,7 @@ function myFunction() {
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Product List</h1>
+                        <h1 class="page-head-line">Tender List</h1>
                     </div>
                 </div>
                 <div class="row">
@@ -65,7 +65,7 @@ function myFunction() {
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Products Details
+                           Tender Details
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -73,32 +73,31 @@ function myFunction() {
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                             <th>Name</th>
+                                            <th>Buiklding Type</th>
+                                            <th>Square Feet</th>
+                                            <th>Tender Date</th>
                                             <th>Description</th>
-                                            <th>Price</th>
-                                            <th>Image</th>
-                                            <th>Address</th>
-                                            <th>Preferable Date</th>
+                                            <th>Amount</th>
                                             <th> Status</th>
                                             
                                         </tr>
                                     </thead>
                                     <?php 
                                         // Query
-                                        $select_sql_book = "SELECT * FROM `reparing_product`";
+                                       $select_sql_book = "SELECT * FROM `tender_table` ";
                                         
                                         $result = $conn->query($select_sql_book);
 
-                                        if ($result->num_rows>0) {
+                                        if ($result->num_rows>0)  {
 											$id  = 1;
                                             while($row = $result->fetch_assoc()){ 
-                                            $pro_id = $row["id"];
-                                            $name = $row["name"];
-                                            $description = $row["description"];
-                                            $price = $row["price"];
-                                            $image = $row["image"];
-                                            $address = $row["address"];
-                                            $r_date = $row["reparing_date"];
+                                            
+                                            $customer_id = $row["customer_id"];
+                                            $name = $row["building_type"];
+                                            $square_feet = $row["square_feet"];
+											$description = $row["description"];
+                                            $tender_date = $row["tender_date"];
+                                            $amount = $row["amount"];
                                             
                                            
                                     ?>
@@ -106,32 +105,31 @@ function myFunction() {
                                         <tr>
                                             <td><?php echo $id; ?></td>
                                             <td><?php echo $name; ?></td>
+                                            <td><?php echo $square_feet; ?></td>
                                             <td><?php echo $description; ?></td>
-                                            <td><?php echo $price; ?></td>
-                                            <td><img src="<?php echo $image; ?>" alt="r_image" style="height:80px;width:100px;"></td>
-                                            <td><?php echo $address; ?></td>
-                                            <td><?php echo $r_date; ?></td>
+                                            <td><?php echo $tender_date; ?></td>
+                                            <td><?php echo $amount; ?></td>
                                             <?php
 											
 												
 											
 											if ($block=$row["Status"] == 0) {
 
-												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-warning' href='update_status1.php?uid=$row[id]'>Pending</a></td></tr> ";
+												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-warning' href='tender_amount.php?tender_id=$row[tender_id]'>Pending</a></td></tr> ";
 
 												
 												} 
 												else if($block=$row["Status"] == 1) {
 
-												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-success' href='update_status.php?uid=$row[id]'>Approved</a></td></tr> ";
+												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-success' href='update_status.php?tender_id=$row[tender_id]'>Approved</a></td></tr> ";
 												}
 												else if($block=$row["Status"] == 2) {
 
-												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-primary' href='update_status.php?uid=$row[id]'>confirm</a></td></tr> ";
+												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-primary' href='update_status.php?tender_id=$row[tender_id]'>confirm</a></td></tr> ";
 												}
 												else if($block=$row["Status"] == 3) {
 
-												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-danger' href='update_status.php?uid=$row[id]'>Rejected</a></td></tr> ";
+												  echo "<td class='text-center text-dark' class='linq'><a class='btn btn-danger' href='update_status.php?tender_id=$row[tender_id]'>Rejected</a></td></tr> ";
 												}
 												
 											

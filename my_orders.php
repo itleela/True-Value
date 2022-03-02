@@ -42,6 +42,14 @@ include 'header.php';
 				</div>
 			
 				<div >
+				<?php
+				                                        // Query
+										$select_sql_book = "SELECT * FROM `final_order` where user_id = '$id'";
+                                        
+                                        $result = $con->query($select_sql_book);
+
+                                        if ($result->num_rows>0) {
+				?>
                                 <table class="table  table-bordered table-hover">
                                     <thead>
                                         <tr>
@@ -55,12 +63,7 @@ include 'header.php';
 											</tr>
                                     </thead>
                                     <?php 
-                                        // Query
-										$select_sql_book = "SELECT * FROM `final_order` where user_id = '$id'";
-                                        
-                                        $result = $con->query($select_sql_book);
 
-                                        if ($result->num_rows>0) {
 											
 											$id  = 1;
 											
@@ -93,6 +96,10 @@ include 'header.php';
 										$id++;
 										}
                                         }
+										else
+										{
+											echo "<div class='text-danger'><h3>No order details  available.<h3></div>";
+										}
                                     ?>
                                 </tbody>
                                 </table>

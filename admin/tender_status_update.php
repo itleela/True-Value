@@ -10,21 +10,21 @@
 		require 'config.php';
         
          
-		 $price = $_POST['price'];
-		 $status = $_POST['status'];
-		 $r_id = $_POST['r_id'];
+		 $tender_amount = $_POST['tender_amount'];
+		 $tender_status = $_POST['tender_status'];
+		 $tender_id = $_POST['tender_id'];
 	
 		
 		//echo $t;
 		if(isset($_POST["submit"]))
 		{
-		if($status==0){
+		if($tender_status==0){
 			
-			 $updateque = "update reparing_product set Status ='1',price='$price' where  id='$r_id'"; 
+			 $updateque = "update tender_table set Status ='1',amount='$tender_amount' where  tender_id='$tender_id'"; 
              $result=mysqli_query($conn,$updateque);
             
              if($result){             
-                header('location:reparing_product.php');
+                header('location:manage_ tender.php');
                 }
 		}
 		}
@@ -58,7 +58,3 @@
  
  
  
-
-
-    
-  

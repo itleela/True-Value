@@ -66,7 +66,12 @@
                             </li>
                                                      
                         </ul>
-                    </li> 
+						
+                    </li>
+					<li>
+					 <a href="manage_tender.php"><i class="fa fa-carts"></i>Manage Tenderr</a>
+                      
+					</li>					
 					
 					<!--<a href="#"><i class="fa fa-users "></i>Lawyers<span class="fa arrow"></span></a>						
 						<ul class="nav nav-second-level">
