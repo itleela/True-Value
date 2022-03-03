@@ -24,7 +24,7 @@
              $result=mysqli_query($conn,$updateque);
             
              if($result){             
-                header('location:manage_ tender.php');
+                header('location:manage_tender.php');
                 }
 		}
 		}

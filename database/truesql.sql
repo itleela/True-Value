@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2022 at 12:02 PM
+-- Generation Time: Mar 03, 2022 at 08:02 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.22
 
@@ -77,9 +77,9 @@ INSERT INTO `customer_register` (`id`, `name`, `phone`, `email`, `password`, `ci
 (3, 'Piper Lynch', 'Brenden Ra', 'b@b.com', '1', 'Voluptas aspernatur ', '15 North Second Court'),
 (4, 'rathva leela', '1234569856', 'l@l.com', '123', 'vadodara', 'manjalpur vadodara'),
 (5, '', '', '', '', '', ''),
-(6, 'Rathva Raju', '7567670307', 'rathvaleela4@gmail.com', '123', 'Vadodara', '20,vijay raj nagar new sama ,vadodara.'),
-(7, 'Rathva Raju', '7889654521', 'rajurathva1924@gmail.com', '123', 'Vadodara', '20,vijay raj nagar new sama ,vadodara.'),
-(8, 'rathva geeta', '7845125896', 'rathvageeta1@gmail.com', '123', 'vadodara', '23 East Clarendon Extension');
+(6, 'Rathva Raju', '7567670307', 'a@gmail.com', '123', 'Vadodara', '20,vijay raj nagar new sama ,vadodara.'),
+(7, 'Rathva Raju', '7889654521', 'b@gmail.com', '123', 'Vadodara', '20,vijay raj nagar new sama ,vadodara.'),
+(8, 'rathva geeta', '7845125896', 'c@gmail.com', '123', 'vadodara', '23 East Clarendon Extension');
 
 -- --------------------------------------------------------
 
@@ -143,13 +143,6 @@ CREATE TABLE `owner_register` (
   `Email` varchar(30) DEFAULT NULL,
   `Password` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `owner_register`
---
-
-INSERT INTO `owner_register` (`id`, `Name`, `Email`, `Password`) VALUES
-(1, 'Rathva Leela', 'admin@gmail.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -249,19 +242,19 @@ INSERT INTO `quotaton_table` (`qut_id`, `persion_name`, `persion_email`, `persio
 (1, 'JIGAR', NULL, '879879987987', '2022-02-18', 2422),
 (2, 'JIGAR', NULL, '879879987987', '2022-02-18', 2422),
 (4, 'Rathva Leela', NULL, '7894561236', '2022-02-26', 2350),
-(5, 'Rathva Leela', 'rathvaleela4@gmail.com', '1235648788', '2022-02-25', 77),
-(6, 'xzz', 'rathvaleela4@gmail.com', 'ghjgj', '2022-02-26', 4641),
-(7, 'Rathva Leela', 'rathvaleela4@gmail.com', '7894561236', '2022-02-26', 288),
-(8, 'Rathva Leela', 'rathvaleela4@gmail.com', '7894561236', '2022-02-26', 288),
+(5, 'Rathva Leela', 'a', '1235648788', '2022-02-25', 77),
+(6, 'xzz', 'v', 'ghjgj', '2022-02-26', 4641),
+(7, 'Rathva Leela', NULL, '7894561236', '2022-02-26', 288),
+(8, 'Rathva Leela', NULL, '7894561236', '2022-02-26', 288),
 (9, 'new', 'new@gmail.com', '123456789', '2022-02-24', 965),
 (10, 'Armand Schroeder', 'qemosefyp@mailinator.com', '13-Nov-2019', '2015-01-19', 991),
 (11, 'Teegan Warner', 'bocyhymih@mailinator.com', '07-Jul-2003', '2006-02-05', 2350),
 (12, 'Kenneth Figueroa', 'cudynen@mailinator.com', '321365464', '2004-05-05', 2350),
 (13, 'Kenneth Figueroa', 'cudynen@mailinator.com', '321365464', '2004-05-05', 2350),
-(14, 'Rathva Leela new', 'rathvaleela4@gmail.com', '8745896545', '2022-01-22', 350),
+(14, 'Rathva Leela new', NULL, '8745896545', '2022-01-22', 350),
 (15, 'Gabriel Fitzpatrick', 'sewuzomyry@mailinator.com', '24-May-2002', '2008-07-27', 718),
-(16, 'rathva', 'rathvageeta1@gmail.com', '8754986521', '2014-04-27', 2641),
-(17, 'Forrest Pruitt', 'rajurathva1924@gmail.com', '7898568754', '1979-05-23', 2561);
+(16, 'rathva', NULL, '8754986521', '2014-04-27', 2641),
+(17, 'Forrest Pruitt', NULL, '7898568754', '1979-05-23', 2561);
 
 -- --------------------------------------------------------
 
@@ -311,20 +304,20 @@ CREATE TABLE `reparing_product` (
   `reparing_date` date NOT NULL,
   `price` int(10) NOT NULL DEFAULT 0,
   `address` varchar(60) NOT NULL,
-  `Status` varchar(10) NOT NULL DEFAULT '0' COMMENT 'pending=0,approved=1,confirm=2,reject=3'
+  `Status` varchar(10) NOT NULL DEFAULT '0' COMMENT 'pending=0,approved=1,confirm=2,reject=3',
+  `req_id` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `reparing_product`
 --
 
-INSERT INTO `reparing_product` (`id`, `c_id`, `name`, `description`, `image`, `reparing_date`, `price`, `address`, `Status`) VALUES
-(1, 1, 'Cullen Pace', 'Amet incidunt temp', 'reparing_image/f1.jpg', '2022-02-12', 200, 'Et id fugit quos s', '2'),
-(2, 1, 'Nolan Noel', 'Sed rem dolores amet', 'reparing_image/f2.jpg', '2022-02-12', 500, 'Vitae ea tempora dol', '3'),
-(3, 2, 'Kadeem Sargent', 'Omnis omnis repudian', 'reparing_image/f10.jpg', '2022-02-12', 500, 'Quis cupiditate ut i', '3'),
-(4, 1, 'Jayme Larson', 'Nulla exercitation e', 'reparing_image/f1.jpg', '2022-02-14', 0, 'Maiores ut tempore ', '0'),
-(7, 1, 'Veda Wheeler', 'Voluptatum at error ', 'reparing_image/favicon.ico', '2022-02-17', 0, 'Aut veritatis quo in', '0'),
-(8, 8, 'product12', 'hfv jhfghjfg fg', 'reparing_image/f10.jpg', '2022-02-26', 5000, 'Tenetur officiis omn', '2');
+INSERT INTO `reparing_product` (`id`, `c_id`, `name`, `description`, `image`, `reparing_date`, `price`, `address`, `Status`, `req_id`) VALUES
+(1, 6, 'Harding Armstrong', 'Optio rerum autem i', 'reparing_image/f3.jpg', '2022-03-01', 0, 'Laborum Pariatur Q', '0', 2965),
+(2, 6, 'Audra Pitts', 'Iusto dolorum et opt', 'reparing_image/f3.jpg', '2022-03-01', 500, 'Pariatur Nulla quis', '2', 3387),
+(3, 6, 'Erin Walker', 'Explicabo Reprehend', 'reparing_image/f6.jpg', '2022-03-01', 0, 'Voluptatem Aut inci', '0', 9457),
+(4, 6, 'Athena Francis', 'Sit aut dignissimos ', 'reparing_image/f2.jpg', '2022-03-01', 0, 'Consequatur pariatu', '0', 9003),
+(5, 6, 'Flynn Butler', 'Voluptas qui culpa n', 'reparing_image/features-2.png', '2022-03-03', 0, 'In adipisci incididu', '0', 6634);
 
 -- --------------------------------------------------------
 
@@ -338,6 +331,32 @@ CREATE TABLE `temp_product` (
   `p_name` varchar(50) NOT NULL,
   `p_price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tender_table`
+--
+
+CREATE TABLE `tender_table` (
+  `tender_id` int(10) NOT NULL,
+  `customer_id` int(10) DEFAULT NULL,
+  `rendom_tender_id` int(11) DEFAULT NULL,
+  `building_type` varchar(30) NOT NULL,
+  `square_feet` int(20) NOT NULL,
+  `tender_date` date NOT NULL,
+  `description` varchar(50) NOT NULL,
+  `amount` int(20) NOT NULL DEFAULT 0,
+  `Status` int(10) NOT NULL DEFAULT 0 COMMENT 'pending=0,approved=1,confirm=2,reject=3'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tender_table`
+--
+
+INSERT INTO `tender_table` (`tender_id`, `customer_id`, `rendom_tender_id`, `building_type`, `square_feet`, `tender_date`, `description`, `amount`, `Status`) VALUES
+(1, 6, 1253, 'Building', 1200, '2022-03-11', 'ghgf h ty ryt', 5000, 2),
+(2, 6, 5402, 'Building', 1200, '2022-03-11', 'fgdfg', 52000, 3);
 
 --
 -- Indexes for dumped tables
@@ -379,8 +398,7 @@ ALTER TABLE `products`
 -- Indexes for table `quotaton_details_table`
 --
 ALTER TABLE `quotaton_details_table`
-  ADD PRIMARY KEY (`qd_id`),
-  ADD KEY `qut_id` (`qut_id`);
+  ADD PRIMARY KEY (`qd_id`);
 
 --
 -- Indexes for table `quotaton_table`
@@ -405,6 +423,12 @@ ALTER TABLE `reparing_product`
 --
 ALTER TABLE `temp_product`
   ADD PRIMARY KEY (`temp_id`);
+
+--
+-- Indexes for table `tender_table`
+--
+ALTER TABLE `tender_table`
+  ADD PRIMARY KEY (`tender_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -432,7 +456,7 @@ ALTER TABLE `final_order`
 -- AUTO_INCREMENT for table `owner_register`
 --
 ALTER TABLE `owner_register`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -462,13 +486,19 @@ ALTER TABLE `q_persion`
 -- AUTO_INCREMENT for table `reparing_product`
 --
 ALTER TABLE `reparing_product`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `temp_product`
 --
 ALTER TABLE `temp_product`
   MODIFY `temp_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `tender_table`
+--
+ALTER TABLE `tender_table`
+  MODIFY `tender_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

@@ -240,7 +240,7 @@ if ($select_customer->num_rows>0) {
         },
     "handler": function (response){
     	  	//alert("inside ajax");
-			 window.location.href = 'http://localhost/truevalus/True/final_order_proccess.php?res_id='+res_id;
+			 window.location.href = 'http://localhost/True/final_order_proccess.php?res_id='+res_id;
 			  //   window.location = res.redirectURL;
 			 
     },

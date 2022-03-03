@@ -4,7 +4,7 @@
 
         include 'connection.php';
         
-         $tender_id =$_GET['tender_id	'];
+         $tender_id =$_GET['tender_id'];
 		 
 		 
 

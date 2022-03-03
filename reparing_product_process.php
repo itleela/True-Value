@@ -97,8 +97,8 @@ $insert_sql = "INSERT INTO reparing_product(c_id,name,description,image,reparing
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = 587;
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'itleela95@gmail.com';                 // SMTP username
-    $mail->Password = 'leela21597';                           // SMTP password
+    $mail->Username = '';                 // SMTP username
+    $mail->Password = '';                           // SMTP password
     
     $mail->setFrom('Rathva Leela');
     $mail->addAddress($Email, 'Enlighten');     // Add a recipient
